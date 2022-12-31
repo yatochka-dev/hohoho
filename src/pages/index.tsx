@@ -146,9 +146,8 @@ const Home: NextPage<{ title: string, [key: string]: string }> = ({
     return (
         <>
             <Head>
-                <title>Happy new year, Gl1nchiki.</title>
-                <meta name="description" content="Wishing you a happy and prosperous New Year,
-                        Gl1nchiki!"/>
+                <title>{metaTitle}</title>
+                <meta name="description" content={metaDescription}/>
                 <meta property={"og:title"} content={metaTitle}/>
                 <meta property={"og:description"} content={metaDescription}/>
 
