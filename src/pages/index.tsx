@@ -7,7 +7,7 @@ import bgImage from "@/public/assets/Christmas-tree-image.webp";
 import Snowfall from 'react-snowfall'
 import Link from "next/link";
 import {useRouter} from "next/router";
-import ogImage from "@/public/assets/bg.jpg";
+import ogImage from "@/public/assets/og.jpg";
 
 export async function getStaticProps({locale}: GetStaticPropsContext) {
 
