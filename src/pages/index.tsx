@@ -4,7 +4,6 @@ import {type NextPage} from "next";
 import classes from "@/styles/Home.module.scss";
 import Head from "next/head";
 import bgImage from "@/public/assets/Christmas-tree-image.webp";
-import ogImage from "@/public/assets/bg.jpg";
 import Snowfall from 'react-snowfall'
 import Link from "next/link";
 import {useRouter} from "next/router";
@@ -152,6 +151,8 @@ const Home: NextPage<{ title: string, [key: string]: string }> = ({
                 <meta property={"og:description"} content={metaDescription}/>
 
                 <meta property={"og:image"} content={bgImage.src}/>
+                <meta property="og:image:width" content="600"/>
+                <meta property="og:image:height" content="600"/>
                 <link rel="icon" href="/favicon2.ico"/>
             </Head>
             <main className={classes.main}
