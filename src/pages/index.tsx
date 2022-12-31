@@ -10,7 +10,6 @@ import Link from "next/link";
 import {useRouter} from "next/router";
 
 
-
 export async function getStaticProps({locale}: GetStaticPropsContext) {
 
 
@@ -72,6 +71,21 @@ export async function getStaticProps({locale}: GetStaticPropsContext) {
         "be": "Ята",
     }
 
+    const metaTitles = {
+        "en": "Happy New Year 2023",
+        "ru": "С Новым Годом 2023",
+        "uk": "З Новим Роком 2023",
+        "kk": "Жаңа жыл 2023",
+        "be": "Новы год 2023",
+    };
+
+    const metaDescriptions = {
+        "en": "Happy New Year 2023! Wishing you all a happy and healthy 2023.",
+        "ru": "С Новым Годом 2023! Желаю всем счастливого и здорового 2023 года.",
+        "uk": "З Новим Роком 2023! Бажаю всім вам щасливого та здорового 2023 року.",
+        "kk": "Жаңа жыл 2023! Баршаңызға 2023 жыл бақытты және денсаулық тілеймін.",
+        "be": "Новы год 2023! Бажаю усім шчаслівага і здаровага 2023!",
+    }
 
     function getLocale(): string {
         if (locale === undefined) {
@@ -79,6 +93,7 @@ export async function getStaticProps({locale}: GetStaticPropsContext) {
         }
         return locale;
     }
+
 
     return {
         props: {
@@ -104,6 +119,12 @@ export async function getStaticProps({locale}: GetStaticPropsContext) {
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
             name: name[getLocale()],
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            metaTitle: metaTitles[getLocale()],
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            metaDescription: metaDescriptions[getLocale()],
         },
     };
 }
@@ -114,7 +135,10 @@ const Home: NextPage<{ title: string, [key: string]: string }> = ({
                                                                       p2,
                                                                       p3,
                                                                       sincerely,
-                                                                      name
+                                                                      name,
+                                                                      metaTitle,
+                                                                      metaDescription,
+
                                                                   }) => {
 
     const router = useRouter();
@@ -125,10 +149,10 @@ const Home: NextPage<{ title: string, [key: string]: string }> = ({
                 <title>Happy new year, Gl1nchiki.</title>
                 <meta name="description" content="Wishing you a happy and prosperous New Year,
                         Gl1nchiki!"/>
-                <meta property={"og:title"}
-                      content={"Wishing you a happy and prosperous New Year,\n" +
-                          "                        Gl1nchiki!"}/>
-                <meta property={"og:image"} content={ogImage.src}/>
+                <meta property={"og:title"} content={metaTitle}/>
+                <meta property={"og:description"} content={metaDescription}/>
+
+                <meta property={"og:image"} content={bgImage.src}/>
                 <link rel="icon" href="/favicon2.ico"/>
             </Head>
             <main className={classes.main}
@@ -152,7 +176,7 @@ const Home: NextPage<{ title: string, [key: string]: string }> = ({
                     </p>
                     <p>{sincerely},&nbsp;
                         <Link href={"https://github.com/"}>
-                                {name}
+                            {name}
                         </Link>
                     </p>
 
