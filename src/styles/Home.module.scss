@@ -1,0 +1,52 @@
+.text_body {
+  transition: color 0.3s;
+  z-index: 2;
+
+  color: rgb(171, 188, 196);
+  max-width: 60vw;
+
+
+  @media screen and (max-width: 560px) {
+    max-width: 80vw;
+  }
+
+  @media screen and (max-width: 370px) {
+    max-width: 90vw;
+  }
+
+  &__langs {
+    display: flex;
+    flex-direction: row;
+
+    text-transform: uppercase;
+
+
+    div:not(:first-child) {
+      margin-left: 1rem;
+    }
+
+    div {
+      &:hover {
+        color: rgb(255, 255, 255);
+      }
+    }
+
+
+  }
+
+
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+
+  min-height: 100vh;
+  max-height: 100vh;
+
+  overflow: hidden;
+
+}
