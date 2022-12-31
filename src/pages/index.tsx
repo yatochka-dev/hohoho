@@ -175,7 +175,7 @@ const Home: NextPage<{ title: string, [key: string]: string }> = ({
                         {p3}
                     </p>
                     <p>{sincerely},&nbsp;
-                        <Link href={"https://github.com/"}>
+                        <Link href={"https://github.com/yatochka-dev/"}>
                             {name}
                         </Link>
                     </p>

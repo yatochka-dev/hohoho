@@ -14,10 +14,18 @@
     max-width: 90vw;
   }
 
+  p > a {
+    color: rgb(112, 181, 216);
+
+    &:hover {
+      color: rgb(255, 255, 255);
+    }
+  }
+
   &__langs {
     display: flex;
     flex-direction: row;
-
+    color: rgb(171, 188, 196) !important;
     text-transform: uppercase;
 
 
@@ -26,6 +34,7 @@
     }
 
     div {
+
       &:hover {
         color: rgb(255, 255, 255);
       }
