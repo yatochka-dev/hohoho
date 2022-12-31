@@ -151,8 +151,14 @@ const Home: NextPage<{ title: string, [key: string]: string }> = ({
                 <meta property={"og:description"} content={metaDescription}/>
 
                 <meta property={"og:image"} content={ogImage.src}/>
-                <meta property="og:image:width" content={String(ogImage.width)}/>
-                <meta property="og:image:height" content={String(ogImage.height)}/>
+                <meta property="og:image:width"
+                      content={String(ogImage.width)}/>
+                <meta property="og:image:height"
+                      content={String(ogImage.height)}/>
+
+                <meta name="twitter:card" content="summary"/>
+                <meta name="twitter:title" content={metaTitle}/>
+                <meta name="twitter:description" content={metaDescription}/>
                 <link rel="icon" href="/favicon2.ico"/>
             </Head>
             <main className={classes.main}
