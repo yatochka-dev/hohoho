@@ -7,7 +7,7 @@ import bgImage from "@/public/assets/Christmas-tree-image.webp";
 import Snowfall from 'react-snowfall'
 import Link from "next/link";
 import {useRouter} from "next/router";
-
+import ogImage from "@/public/assets/bg.jpg";
 
 export async function getStaticProps({locale}: GetStaticPropsContext) {
 
@@ -150,9 +150,9 @@ const Home: NextPage<{ title: string, [key: string]: string }> = ({
                 <meta property={"og:title"} content={metaTitle}/>
                 <meta property={"og:description"} content={metaDescription}/>
 
-                <meta property={"og:image"} content={bgImage.src}/>
-                <meta property="og:image:width" content={String(bgImage.width)}/>
-                <meta property="og:image:height" content={String(bgImage.height)}/>
+                <meta property={"og:image"} content={ogImage.src}/>
+                <meta property="og:image:width" content={String(ogImage.width)}/>
+                <meta property="og:image:height" content={String(ogImage.height)}/>
                 <link rel="icon" href="/favicon2.ico"/>
             </Head>
             <main className={classes.main}
