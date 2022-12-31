@@ -151,8 +151,8 @@ const Home: NextPage<{ title: string, [key: string]: string }> = ({
                 <meta property={"og:description"} content={metaDescription}/>
 
                 <meta property={"og:image"} content={bgImage.src}/>
-                <meta property="og:image:width" content="600"/>
-                <meta property="og:image:height" content="600"/>
+                <meta property="og:image:width" content={String(bgImage.width)}/>
+                <meta property="og:image:height" content={String(bgImage.height)}/>
                 <link rel="icon" href="/favicon2.ico"/>
             </Head>
             <main className={classes.main}
